@@ -18,9 +18,11 @@ public class Service {
     }
 
     public static Service getInstance() {
-        synchronized (Service.class) {
-            if (service == null) {
-                service = new Service(12, 5, 0);
+        if (service == null) {
+            synchronized (Service.class) {
+                if (service == null) {
+                    service = new Service(12, 5, 0);
+                }
             }
         }
         return service;

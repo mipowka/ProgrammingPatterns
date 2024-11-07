@@ -1,4 +1,4 @@
-package org.example.builder;
+package org.example.creational.builder;
 
 public class Product {
     private final int id;
@@ -51,6 +51,11 @@ public class Product {
                 ", quantity=" + quantity +
                 ", discount=" + discount +
                 '}';
+    }
+
+
+    public static ProductBuilder builder (){
+        return new ProductBuilder();
     }
 
     public static class ProductBuilder {

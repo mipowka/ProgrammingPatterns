@@ -1,4 +1,4 @@
-package org.example.singleton;
+package org.example.creational.singleton;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;

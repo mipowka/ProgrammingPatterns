@@ -1,0 +1,50 @@
+динамическое добавление новых обязанностей объекту
+
+Паттерн Decorator в Spring Framework активно используется для добавления дополнительного функционала к
+    объектам без изменения их исходного кода. В Spring этот паттерн используется для динамического
+    расширения функциональности различных компонентов и объектов, сохраняя при этом их интерфейс.
+
+HandlerInterceptor и DelegatingHandlerInterceptor (Spring MVC)
+В Spring MVC паттерн Decorator реализуется через интерфейс HandlerInterceptor и его декоратор
+    DelegatingHandlerInterceptor. HandlerInterceptor позволяет вам перехватывать обработку HTTP-запросов
+    до и после выполнения контроллера. Для добавления дополнительных действий или логики, не меняя основной
+    обработчик, используется декоратор.
+
+TransactionProxy и TransactionInterceptor (Spring Transaction)
+В Spring Transaction Management также используется паттерн Decorator для расширения функциональности
+    транзакционных операций. Класс TransactionProxy и интерфейс TransactionInterceptor используются для
+    добавления функциональности управления транзакциями.
+
+DataSource и DelegatingDataSource (Spring JDBC)
+В Spring JDBC паттерн Decorator также активно используется для оборачивания DataSource объектов.
+    Класс DelegatingDataSource является примером декоратора, который позволяет добавлять дополнительную
+    функциональность к существующему источнику данных без изменения его исходного кода.
+
+Cache и CacheDecorator (Spring Cache)
+В Spring Cache используется паттерн Decorator для расширения стандартных кешей. Например, CacheDecorator
+    может использоваться для добавления функциональности, такой как логирование, проверка на существование
+    ключа, или другие дополнительные операции.
+
+WebSecurityConfigurerAdapter и его декораторы (Spring Security)
+В Spring Security используется паттерн Decorator для расширения конфигураций безопасности через
+    WebSecurityConfigurerAdapter. Это позволяет вам добавлять дополнительные конфигурации безопасности
+    без изменения основной логики. Например, через HttpSecurity можно добавлять новые фильтры или
+    изменять поведение аутентификации.
+
+Environment и ConfigurableEnvironment (Spring Environment)
+Spring предоставляет абстракцию Environment для работы с профилями и конфигурациями окружения. В случае,
+    если необходимо добавить дополнительные действия при получении значений из конфигураций, можно
+    использовать декораторы, такие как ConfigurableEnvironment.
+
+=======================================================================================================================
+Паттерн Decorator в Spring активно используется для динамического добавления функциональности к объектам
+    без изменения их исходного кода. Явные реализации этого паттерна можно найти в таких компонентах Spring, как:
+        HandlerInterceptor и DelegatingHandlerInterceptor в Spring MVC
+        TransactionInterceptor в управлении транзакциями
+        DelegatingDataSource в Spring JDBC
+        CacheDecorator в Spring Cache
+        WebSecurityConfigurerAdapter в Spring Security
+        EnvironmentDecorator в Spring Environment
+
+Все эти примеры используют декоратор для расширения функциональности существующих объектов, обеспечивая
+    гибкость и возможность динамической модификации поведения системы.
